@@ -48,8 +48,8 @@ import (
 	_ "k8s.io/api/storage/v1"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 
-	"github.com/stripe/skycfg"
-	"github.com/stripe/skycfg/gogocompat"
+	"github.com/mattconzen/skycfg"
+	"github.com/mattconzen/skycfg/gogocompat"
 )
 
 var (
