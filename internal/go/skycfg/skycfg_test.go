@@ -27,8 +27,8 @@ import (
 	"github.com/golang/protobuf/ptypes/wrappers"
 	"go.starlark.net/starlark"
 
-	"github.com/stripe/skycfg"
-	pb "github.com/stripe/skycfg/internal/testdata/test_proto"
+	"github.com/mattconzen/skycfg"
+	pb "github.com/mattconzen/skycfg/internal/testdata/test_proto"
 )
 
 var testFiles = map[string]string{

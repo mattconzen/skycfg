@@ -4,13 +4,13 @@ Skycfg is an extension library for the [Starlark language](https://github.com/ba
 
 At present, only the Go implementation of Starlark is supported.
 
-[![API Documentation](https://godoc.org/github.com/stripe/skycfg?status.svg)](https://godoc.org/github.com/stripe/skycfg)
+[![API Documentation](https://godoc.org/github.com/mattconzen/skycfg?status.svg)](https://godoc.org/github.com/mattconzen/skycfg)
 [![Build Status](https://travis-ci.org/stripe/skycfg.svg?branch=master)](https://travis-ci.org/stripe/skycfg)
 [![Test Coverage](https://coveralls.io/repos/github/stripe/skycfg/badge.svg?branch=master)](https://coveralls.io/github/stripe/skycfg?branch=master)
 
 ## Getting Started
 
-The entry point to Skycfg is the [`skycfg.Load()`](https://godoc.org/pkg/github.com/stripe/skycfg/#Load) function, which reads a configuration file from local disk. As the implementation stabilizes we expect to expand the public API surface so that Skycfg can be combined with other Starlark extensions.
+The entry point to Skycfg is the [`skycfg.Load()`](https://godoc.org/pkg/github.com/mattconzen/skycfg/#Load) function, which reads a configuration file from local disk. As the implementation stabilizes we expect to expand the public API surface so that Skycfg can be combined with other Starlark extensions.
 
 Lets start with a simple `main` function that prints out every Protobuf message created by the config file `hello.sky`:
 
@@ -20,7 +20,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/stripe/skycfg"
+    "github.com/mattconzen/skycfg"
     _ "github.com/golang/protobuf/ptypes/wrappers"
 )
 
@@ -47,7 +47,7 @@ def main(ctx):
 Now we can build a small test driver and see what values are returned:
 
 ```
-$ go get github.com/stripe/skycfg
+$ go get github.com/mattconzen/skycfg
 $ go build -o test-skycfg
 $ ./test-skycfg
 value:"Hello, world!"
@@ -57,9 +57,9 @@ $
 Success!
 
 For more in-depth examples covering specific topics, see the `_examples/` directory:
-* [`_examples/repl`](https://github.com/stripe/skycfg/tree/master/_examples/repl): Interactive evaluation of a Skycfg file
-* [`_examples/k8s`](https://github.com/stripe/skycfg/tree/master/_examples/k8s): Basic Kubernetes integration
-* [`_examples/wasm`](https://github.com/stripe/skycfg/tree/master/_examples/wasm): Skycfg in the browser with WebAssembly
+* [`_examples/repl`](https://github.com/mattconzen/skycfg/tree/master/_examples/repl): Interactive evaluation of a Skycfg file
+* [`_examples/k8s`](https://github.com/mattconzen/skycfg/tree/master/_examples/k8s): Basic Kubernetes integration
+* [`_examples/wasm`](https://github.com/mattconzen/skycfg/tree/master/_examples/wasm): Skycfg in the browser with WebAssembly
 
 ## Why use Skycfg?
 
@@ -165,7 +165,7 @@ $ ./test-skycfg
 
 ## Contributing
 
-We welcome contributions from the community. For small simple changes, go ahead and [open a pull request](https://github.com/stripe/skycfg/compare). Larger changes should start out in the issue tracker, so we can make sure they fit into the roadmap. Changes to the Starlark language itself (such as new primitive types or syntax) should be applied to https://github.com/google/starlark-go.
+We welcome contributions from the community. For small simple changes, go ahead and [open a pull request](https://github.com/mattconzen/skycfg/compare). Larger changes should start out in the issue tracker, so we can make sure they fit into the roadmap. Changes to the Starlark language itself (such as new primitive types or syntax) should be applied to https://github.com/google/starlark-go.
 
 ## Stability
 
@@ -191,7 +191,7 @@ name.
 
 For projects that use `gogo_protobuf`, e.g. envoy, this can be very confusing.
 
-To resolve this, use the package `github.com/stripe/skycfg/gogocopmat`
+To resolve this, use the package `github.com/mattconzen/skycfg/gogocopmat`
 in your go code. This will allow skycfg code to load
 `proto.package("gogo:google.protobuf") and the internal registry it
 creates will handle the conversion of these types.
